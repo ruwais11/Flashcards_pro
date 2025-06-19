@@ -1,10 +1,8 @@
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\controller\UserController.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\controller\QuizController.java
-D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\App.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\service\UserService.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\repository\FileStatsRepository.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\model\User.java
-D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\ui\GUIApp.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\web\WebApp.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\model\Flashcard.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\controller\LessonController.java
@@ -14,12 +12,11 @@ D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\serv
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\model\Stats.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\service\StatsService.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\util\FileHandler.java
-D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\ui\QuizDialog.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\repository\Repository.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\web\HomeController.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\service\LessonService.java
+D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\web\AdminController.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\repository\FileFlashcardRepository.java
-D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\ui\ConsoleUI.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\controller\FlashcardController.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\model\StatRecord.java
 D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\src\main\java\com\flashcards\web\FlashcardController.java

@@ -1,16 +1,17 @@
+// src/main/java/com/flashcards/repository/FileFlashcardRepository.java
 package com.flashcards.repository;
 
 import com.flashcards.model.Flashcard;
 import com.flashcards.util.FileHandler;
-import org.springframework.stereotype.Repository;
-
 import java.io.IOException;
 import java.util.List;
 
-@Repository
 public class FileFlashcardRepository implements Repository<Flashcard> {
+    private final String filePath;
 
-    private final String filePath = "data/flashcards.json";
+    public FileFlashcardRepository(String filePath) {
+        this.filePath = filePath;
+    }
 
     @Override
     public List<Flashcard> findAll() {
@@ -24,7 +25,7 @@ public class FileFlashcardRepository implements Repository<Flashcard> {
     @Override
     public Flashcard findById(String id) {
         return findAll().stream()
-                .filter(f -> f.getId().equals(id))
+                .filter(c -> id.equals(c.getId()))
                 .findFirst()
                 .orElse(null);
     }
@@ -32,7 +33,7 @@ public class FileFlashcardRepository implements Repository<Flashcard> {
     @Override
     public void save(Flashcard card) {
         List<Flashcard> list = findAll();
-        // remove any existing with same id
+        // remove any existing card with same ID (for update)…
         list.removeIf(c -> c.getId() != null && c.getId().equals(card.getId()));
         list.add(card);
         try {
@@ -45,7 +46,7 @@ public class FileFlashcardRepository implements Repository<Flashcard> {
     @Override
     public void delete(String id) {
         List<Flashcard> list = findAll();
-        list.removeIf(f -> f.getId().equals(id));
+        list.removeIf(c -> c.getId().equals(id));
         try {
             FileHandler.writeObjects(filePath, list);
         } catch (IOException e) {

@@ -1,38 +1,35 @@
+// src/main/java/com/flashcards/service/FlashcardService.java
 package com.flashcards.service;
 
 import com.flashcards.model.Flashcard;
-import com.flashcards.repository.FileFlashcardRepository;
-import org.springframework.stereotype.Service;
-
+import com.flashcards.repository.Repository;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
-@Service
 public class FlashcardService {
+    private final Repository<Flashcard> repo;
 
-    private final FileFlashcardRepository repo;
-
-    public FlashcardService(FileFlashcardRepository repo) {
+    public FlashcardService(Repository<Flashcard> repo) {
         this.repo = repo;
     }
 
+    /** For your admin screen */
+    public List<Flashcard> getAllCards() {
+        return repo.findAll();
+    }
+
+    /** For lesson-scoped listing and edit */
     public List<Flashcard> getCardsForLesson(String lessonId) {
         return repo.findAll().stream()
-                .filter(c -> lessonId.equals(c.getLessonId()))
+                .filter(c -> c.getLessonId().equals(lessonId))
                 .collect(Collectors.toList());
     }
 
     public Flashcard getCardById(String id) {
-        Flashcard c = repo.findById(id);
-        if (c == null) throw new IllegalArgumentException("No flashcard with id " + id);
-        return c;
+        return repo.findById(id);
     }
 
     public void saveCard(Flashcard card) {
-        if (card.getId() == null) {
-            card.setId(UUID.randomUUID().toString());
-        }
         repo.save(card);
     }
 

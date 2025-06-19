@@ -1,11 +1,10 @@
+// src/main/java/com/flashcards/web/FlashcardController.java
 package com.flashcards.web;
 
 import com.flashcards.model.Flashcard;
 import com.flashcards.service.FlashcardService;
-import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -20,49 +19,39 @@ public class FlashcardController {
 
     @GetMapping
     public String list(@PathVariable String lessonId, Model model) {
-        model.addAttribute("cards", flashcardService.getCardsForLesson(lessonId));
         model.addAttribute("lessonId", lessonId);
+        model.addAttribute("cards", flashcardService.getCardsForLesson(lessonId));
         return "flashcards/list";
     }
 
     @GetMapping("/new")
     public String createForm(@PathVariable String lessonId, Model model) {
-        Flashcard card = new Flashcard();
-        card.setLessonId(lessonId);
-        model.addAttribute("card", card);
+        model.addAttribute("card", new Flashcard(null, lessonId, "", ""));
         return "flashcards/form";
     }
 
     @PostMapping
-    public String create(@PathVariable String lessonId,
-                         @ModelAttribute("card") @Valid Flashcard card,
-                         BindingResult result) {
-        if (result.hasErrors()) {
-            return "flashcards/form";
-        }
+    public String create(@ModelAttribute Flashcard card) {
         flashcardService.saveCard(card);
-        return "redirect:/lessons/" + lessonId + "/cards";
+        return "redirect:/lessons/" + card.getLessonId() + "/cards";
     }
 
     @GetMapping("/edit/{id}")
     public String editForm(@PathVariable String lessonId,
                            @PathVariable String id,
                            Model model) {
-        Flashcard card = flashcardService.getCardById(id);
+        Flashcard card = flashcardService.getCardsForLesson(lessonId).stream()
+                .filter(c -> c.getId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid card ID: " + id));
         model.addAttribute("card", card);
         return "flashcards/form";
     }
 
     @PostMapping("/edit/{id}")
-    public String update(@PathVariable String lessonId,
-                         @PathVariable String id,
-                         @ModelAttribute("card") @Valid Flashcard card,
-                         BindingResult result) {
-        if (result.hasErrors()) {
-            return "flashcards/form";
-        }
+    public String update(@ModelAttribute Flashcard card) {
         flashcardService.saveCard(card);
-        return "redirect:/lessons/" + lessonId + "/cards";
+        return "redirect:/lessons/" + card.getLessonId() + "/cards";
     }
 
     @GetMapping("/delete/{id}")
