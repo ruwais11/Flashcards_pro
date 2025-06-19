@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${card.id == null ? 'New Flashcard' : 'Edit Flashcard'}">Flashcard Form</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1 th:text="${card.id == null ? 'New Flashcard' : 'Edit Flashcard'}">
+    Flashcard Form
+</h1>
+
+<!-- CREATE -->
+<form th:if="${card.id == null}"
+      th:action="@{/lessons/{lessonId}/cards(lessonId=${card.lessonId})}"
+      th:object="${card}"
+      method="post">
+
+    <input type="hidden" th:field="*{lessonId}" />
+
+    <div>
+        <label>Question</label>
+        <input type="text" th:field="*{question}" />
+        <p th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></p>
+    </div>
+
+    <div>
+        <label>Answer</label>
+        <input type="text" th:field="*{answer}" />
+        <p th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}"></p>
+    </div>
+
+    <button type="submit">Create</button>
+    <a th:href="@{/lessons/{lessonId}/cards(lessonId=${card.lessonId})}">Cancel</a>
+</form>
+
+<!-- UPDATE -->
+<form th:if="${card.id != null}"
+      th:action="@{/lessons/{lessonId}/cards/edit/{id}(
+                        lessonId=${card.lessonId},
+                        id=${card.id}
+                    )}"
+      th:object="${card}"
+      method="post">
+
+    <!-- Must bind the existing ID so your update handler sees it -->
+    <input type="hidden" th:field="*{id}" />
+    <input type="hidden" th:field="*{lessonId}" />
+
+    <div>
+        <label>Question</label>
+        <input type="text" th:field="*{question}" />
+        <p th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></p>
+    </div>
+
+    <div>
+        <label>Answer</label>
+        <input type="text" th:field="*{answer}" />
+        <p th:if="${#fields.hasErrors('answer')}" th:errors="*{answer}"></p>
+    </div>
+
+    <button type="submit">Save</button>
+    <a th:href="@{/lessons/{lessonId}/cards(lessonId=${card.lessonId})}">Cancel</a>
+</form>
+
+</body>
+</html>

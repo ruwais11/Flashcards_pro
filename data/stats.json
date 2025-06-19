@@ -1,0 +1,11 @@
+[ {
+  "userId" : "39571579-71ed-4a7c-90f4-4c8bf0449708",
+  "lessonId" : "L1",
+  "correctCount" : 2,
+  "wrongCount" : 1
+}, {
+  "userId" : "admin",
+  "lessonId" : "L1",
+  "correctCount" : 0,
+  "wrongCount" : 2
+} ]

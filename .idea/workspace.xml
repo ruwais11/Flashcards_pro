@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d975d212-bbcc-4f15-80ae-47dcf069fb3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/controller/FlashcardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/controller/LessonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/controller/QuizController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/model/Flashcard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/model/Lesson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/model/Stats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/repository/FileFlashcardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/repository/FileLessonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/repository/FileStatsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/repository/FileUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/repository/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/service/FlashcardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/service/LessonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/service/StatsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/ui/ConsoleUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/ui/GUIApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/ui/QuizDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/util/FileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/web/FlashcardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/web/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/web/LessonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flashcards/web/WebApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/flashcards/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/flashcards/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/lessons/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/lessons/list.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ySQXZJoHKfHCWOK9U9K3wS2GBm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/Kcgi Study Meterials/ObjectOrientedProgramming/KCGI",
+    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\.mvn" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\Flashcards" />
+      <recent name="D:\Ruwais\projects\Java_OOPS\FlashCards Pro v2\.mvn\wrapper" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d975d212-bbcc-4f15-80ae-47dcf069fb3a" name="Changes" comment="" />
+      <created>1749825535099</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749825535099</updated>
+    </task>
+    <servers />
+  </component>
+</project>

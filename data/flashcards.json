@@ -1,0 +1,31 @@
+[ {
+  "id" : "",
+  "question" : "How to say thankyou in malayalam?",
+  "answer" : "Nandi unde",
+  "lessonId" : "M1"
+}, {
+  "id" : null,
+  "question" : "How to greet someone in malayalam?",
+  "answer" : "Oomb Myre",
+  "lessonId" : "M1"
+}, {
+  "id" : "ee862060-c761-4502-ac4b-3a43fe963f16",
+  "question" : "How to say hello in Japanese?",
+  "answer" : "こんにちは",
+  "lessonId" : "L1"
+}, {
+  "id" : "b93a8a1a-65c2-420b-9ad1-8b26d6149baa",
+  "question" : "How to say good morning in Japanese?",
+  "answer" : "おはようございます",
+  "lessonId" : "L1"
+}, {
+  "id" : "a39269a9-961b-471e-a8bf-6d2b12292b4f",
+  "question" : "How to say thankyou in Japanese?",
+  "answer" : "ありがとうございます",
+  "lessonId" : "L1"
+}, {
+  "id" : "4216a819-715f-42ab-95a8-c59c0af7d07a",
+  "question" : "How to ask if they have had food in malayalam",
+  "answer" : "Food kazhicho",
+  "lessonId" : "M1"
+} ]

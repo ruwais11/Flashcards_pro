@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Lessons</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>All Lessons</h1>
+    <p><a th:href="@{/lessons/new}">+ New Lesson</a></p>
+
+    <ul class="card-list">
+        <li th:each="lesson : ${lessons}">
+            <div class="card">
+                <p class="question" th:text="${lesson.title}">Lesson Title</p>
+                <div class="card-actions">
+                    <a th:href="@{'/lessons/edit/' + ${lesson.id}}">Edit</a>
+                    <a th:href="@{'/lessons/' + ${lesson.id} + '/cards'}">Cards →</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

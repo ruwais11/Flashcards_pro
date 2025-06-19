@@ -1,0 +1,125 @@
+/* src/main/resources/static/css/style.css */
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Center container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* Flashcard grid: center items, responsive */
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px auto;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  justify-items: center;  /* center cards within each grid cell */
+}
+
+/* Card styling with fixed max-width and 16:9 ratio */
+.card {
+  background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 16px;
+  aspect-ratio: 16 / 9;
+
+  width: 100%;
+  max-width: 360px;    /* never exceed this width */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Question & answer */
+.card .question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #004d40;
+  margin-bottom: 8px;
+}
+.card .answer {
+  font-size: 1rem;
+  color: #00695c;
+  flex-grow: 1;
+}
+
+/* Actions stick to bottom */
+.card .card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.card .card-actions a {
+  background: #00796b;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+.card .card-actions a:hover {
+  background: #004d40;
+}
+
+/* Form & buttons */
+form {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button, input[type="submit"] {
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover, input[type="submit"]:hover {
+  background: #1565c0;
+}

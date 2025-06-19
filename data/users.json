@@ -1,0 +1,13 @@
+[ {
+  "id" : "51fadea2-8740-4670-856f-8bb04ba98841",
+  "username" : "alice",
+  "admin" : false
+}, {
+  "id" : "39571579-71ed-4a7c-90f4-4c8bf0449708",
+  "username" : "alice",
+  "admin" : false
+}, {
+  "id" : "ee26a59a-607b-4689-a163-e735c0cc61ad",
+  "username" : "ruwais",
+  "admin" : true
+} ]

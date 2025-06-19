@@ -1,0 +1,32 @@
+<!-- src/main/resources/templates/flashcards/list.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards for Lesson [[${lessonId}]]</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Flashcards for lesson <span th:text="${lessonId}">L1</span></h1>
+
+<p>
+    <a th:href="@{/lessons/{lessonId}/cards/new (lessonId=${lessonId})}">
+        + New Flashcard
+    </a> |
+    <a th:href="@{/lessons}">← Back to lessons</a>
+</p>
+
+<ul class="card-list">
+    <li class="card" th:each="card : ${cards}">
+        <div class="question" th:text="${card.question}">Question?</div>
+        <div class="answer"   th:text="${card.answer}">Answer</div>
+        <div class="card-actions">
+            <a th:href="@{/lessons/{lessonId}/cards/edit/{id}(lessonId=${lessonId},id=${card.id})}">Edit</a>
+            <a th:href="@{/lessons/{lessonId}/cards/delete/{id}(lessonId=${lessonId},id=${card.id})}"
+               onclick="return confirm('Delete?')">Delete</a>
+        </div>
+    </li>
+</ul>
+
+</body>
+</html>
