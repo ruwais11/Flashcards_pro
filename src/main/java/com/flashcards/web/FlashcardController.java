@@ -1,4 +1,3 @@
-// src/main/java/com/flashcards/web/FlashcardController.java
 package com.flashcards.web;
 
 import com.flashcards.model.Flashcard;
@@ -17,6 +16,7 @@ public class FlashcardController {
         this.flashcardService = flashcardService;
     }
 
+    // LIST all cards for a lesson
     @GetMapping
     public String list(@PathVariable String lessonId, Model model) {
         model.addAttribute("lessonId", lessonId);
@@ -24,36 +24,46 @@ public class FlashcardController {
         return "flashcards/list";
     }
 
+    // SHOW the “new card” form
     @GetMapping("/new")
     public String createForm(@PathVariable String lessonId, Model model) {
-        model.addAttribute("card", new Flashcard(null, lessonId, "", ""));
-        return "flashcards/form";
-    }
-
-    @PostMapping
-    public String create(@ModelAttribute Flashcard card) {
-        flashcardService.saveCard(card);
-        return "redirect:/lessons/" + card.getLessonId() + "/cards";
-    }
-
-    @GetMapping("/edit/{id}")
-    public String editForm(@PathVariable String lessonId,
-                           @PathVariable String id,
-                           Model model) {
-        Flashcard card = flashcardService.getCardsForLesson(lessonId).stream()
-                .filter(c -> c.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Invalid card ID: " + id));
+        Flashcard card = new Flashcard();
+        card.setLessonId(lessonId);
         model.addAttribute("card", card);
         return "flashcards/form";
     }
 
-    @PostMapping("/edit/{id}")
-    public String update(@ModelAttribute Flashcard card) {
+    // HANDLE submission of the “new card” form
+    @PostMapping
+    public String create(@PathVariable String lessonId,
+                         @ModelAttribute("card") Flashcard card) {
+        card.setLessonId(lessonId);
         flashcardService.saveCard(card);
-        return "redirect:/lessons/" + card.getLessonId() + "/cards";
+        return "redirect:/lessons/" + lessonId + "/cards";
     }
 
+    // SHOW the “edit card” form
+    @GetMapping("/edit/{id}")
+    public String editForm(@PathVariable String lessonId,
+                           @PathVariable String id,
+                           Model model) {
+        Flashcard card = flashcardService.getCardById(id);
+        model.addAttribute("card", card);
+        return "flashcards/form";
+    }
+
+    // HANDLE submission of the “edit card” form
+    @PostMapping("/edit/{id}")
+    public String update(@PathVariable String lessonId,
+                         @PathVariable String id,
+                         @ModelAttribute("card") Flashcard card) {
+        card.setId(id);
+        card.setLessonId(lessonId);
+        flashcardService.saveCard(card);
+        return "redirect:/lessons/" + lessonId + "/cards";
+    }
+
+    // DELETE a card
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable String lessonId,
                          @PathVariable String id) {
